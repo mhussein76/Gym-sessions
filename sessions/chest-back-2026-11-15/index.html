@@ -36,6 +36,8 @@ ol.steps li{margin:3px 0}
 .set .tr{flex:1;color:var(--mute);font-size:14px}
 .set input{width:92px;height:46px;border-radius:12px;border:2px solid var(--line);background:var(--card2);color:var(--text);font-size:17px;font-weight:700;text-align:center}
 .set input::placeholder{color:#6f8196;font-weight:400;font-size:14px}
+.nt{width:100%;min-height:54px;margin-top:10px;border-radius:12px;border:2px solid var(--line);background:var(--card2);color:var(--text);font:inherit;font-size:15px;padding:10px;resize:vertical}
+.nt::placeholder{color:#6f8196}
 .mus{font-size:13px;color:#c9f3d4;background:#12301d;border:1px solid #1f5a33;border-radius:10px;padding:6px 10px;margin-top:8px}
 .rounds{display:flex;gap:8px;align-items:center;margin-top:12px;flex-wrap:wrap}
 .rounds span{color:var(--mute);font-size:13px}
@@ -140,9 +142,11 @@ function render(keepFocus){
       if(!e.bw)h+=`<input type="number" inputmode="decimal" placeholder="كجم" value="${w[i]??""}" data-w="${e.id}" data-i="${i}">`;
       h+=`</div>`;
     }
-    h+=`</div></div></div>`;
+    h+=`</div><textarea class="nt" data-n="${e.id}" placeholder="ملاحظاتك على هذا التمرين...">${S[e.id+"_n"]||""}</textarea></div></div>`;
   });
   h+=`<div class="sec">الملخص</div><div class="sum">${SUM.map(r=>`<div><span>${r[0]}</span><em>${r[1]}</em></div>`).join("")}</div>`;
+  h+=`<div class="sec">ملاحظات الحصة</div><textarea class="nt" data-n="gen" placeholder="كيف كانت الحصة؟ التعب، الألم، أي شيء تريد تذكره...">${S.gen_n||""}</textarea>`;
+  h+=`<div class="reset"><button class="btn" id="copy">نسخ ملخص الحصة</button></div><textarea class="nt" id="out" readonly style="display:none;min-height:180px"></textarea>`;
   h+=`<div class="reset"><button class="btn ghost" id="reset">ابدأ من جديد (مسح العلامات)</button></div>`;
   app.innerHTML=h;progress();
 }
@@ -155,13 +159,23 @@ app.addEventListener("click",ev=>{
   if(c){const id=c.dataset.id,i=+c.dataset.i;const a=S[id]||[];a[i]=!a[i];S[id]=a;save();
     const was=window.scrollY;render();window.scrollTo(0,was);
     if(a[i])startT(60);return}
+  if(ev.target.id==="copy"){
+    let t="حصة صدر وظهر — 15/11/2026\n";
+    EX.forEach(e=>{const on=S[e.id]||[],w=S[e.id+"_w"]||[];
+      t+="\n"+e.n+". "+e.en+": "+[0,1,2].map(i=>(on[i]?"✓":"✗")+(e.bw?"":" "+(w[i]?w[i]+" كجم":"-"))).join(" | ");
+      if(S[e.id+"_n"])t+="\n   ملاحظة: "+S[e.id+"_n"]});
+    if(S.gen_n)t+="\n\nملاحظات الحصة: "+S.gen_n;
+    const out=$("#out");out.value=t;out.style.display="block";out.focus();out.select();
+    try{navigator.clipboard.writeText(t).then(()=>{ev.target.textContent="تم النسخ ✓"},()=>{ev.target.textContent="انسخ النص من الأسفل"})}catch(e){ev.target.textContent="انسخ النص من الأسفل"}
+    return}
   if(ev.target.id==="reset"){const r=ev.target;
     if(r.dataset.sure){S={};save();render()}
     else{r.dataset.sure=1;r.textContent="اضغط مرة ثانية للتأكيد";setTimeout(()=>{r.dataset.sure="";r.textContent="ابدأ من جديد (مسح العلامات)"},3000)}return}
   if(ev.target.classList.contains("pic")||ev.target.classList.contains("gif")){const z=$("#zoom");$("img",z).src=ev.target.src;z.style.display="flex"}
 });
 app.addEventListener("input",ev=>{
-  const t=ev.target;if(t.dataset.w){const a=S[t.dataset.w+"_w"]||[];a[+t.dataset.i]=t.value;S[t.dataset.w+"_w"]=a;save()}
+  const t=ev.target;if(t.dataset.n){S[t.dataset.n==="gen"?"gen_n":t.dataset.n+"_n"]=t.value;save();return}
+  if(t.dataset.w){const a=S[t.dataset.w+"_w"]||[];a[+t.dataset.i]=t.value;S[t.dataset.w+"_w"]=a;save()}
 });
 $("#zoom").onclick=()=>{$("#zoom").style.display="none"};
 document.querySelectorAll("#timer [data-s]").forEach(b=>b.onclick=()=>startT(+b.dataset.s));
