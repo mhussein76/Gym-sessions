@@ -1,0 +1,11 @@
+[
+  {
+    "id": "session-06-cardio",
+    "title": "الحصة السادسة — كارديو",
+    "date": "03/09/2026",
+    "type": "Cardio",
+    "summary": "دائرة جسم كامل 3 مرات: Swing, Snatch, Sandbag, Lunges + Squats، ثم Knee Raise.",
+    "exercises": 7,
+    "path": "sessions/session-06-cardio/"
+  }
+]
