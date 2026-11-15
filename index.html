@@ -17,7 +17,7 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-appl
 .feats div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px 14px;font-size:14px}
 main{max-width:760px;margin:0 auto;padding:10px 16px 60px}
 h2{font-size:18px;color:var(--acc);margin:10px 0 14px}
-.grid{display:grid;gap:14px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
 .card{display:block;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;color:inherit;text-decoration:none;transition:transform .15s,border-color .15s}
 .card:hover{transform:translateY(-2px);border-color:var(--acc)}
 .top{display:flex;justify-content:space-between;align-items:center;gap:10px}
@@ -27,6 +27,8 @@ h2{font-size:18px;color:var(--acc);margin:10px 0 14px}
 .card p{margin:0;color:var(--mute);font-size:14px}
 .go{display:inline-block;margin-top:14px;background:var(--acc);color:#111;font-weight:800;border-radius:12px;padding:9px 18px;font-size:15px}
 .meta{color:var(--mute);font-size:13px;margin-top:10px}
+.card.off{opacity:.45;pointer-events:none}
+.ic{font-size:30px}
 .empty{color:var(--mute);text-align:center;padding:30px}
 footer{text-align:center;color:var(--mute);font-size:13px;padding:24px 16px 40px;border-top:1px solid var(--line)}
 </style>
@@ -44,23 +46,23 @@ footer{text-align:center;color:var(--mute);font-size:13px;padding:24px 16px 40px
   </div>
 </section>
 <main>
-  <h2>الحصص</h2>
+  <h2>اختر الكلاس</h2>
   <div class="grid" id="list"><div class="empty">جاري التحميل...</div></div>
 </main>
 <footer>Gym Sessions</footer>
 <script>
-fetch("sessions.json").then(r=>r.json()).then(list=>{
+fetch("sessions.json").then(r=>r.json()).then(data=>{
   const el=document.getElementById("list");
-  if(!list.length){el.innerHTML='<div class="empty">لا توجد حصص بعد.</div>';return}
-  el.innerHTML=list.slice().reverse().map(s=>`
-    <a class="card" href="${s.path}">
-      <div class="top"><span class="tag">${s.type}</span><span class="date">${s.date}</span></div>
-      <h3>${s.title}</h3>
-      <p>${s.summary}</p>
-      <div class="meta">${s.exercises} تمارين</div>
-      <span class="go">افتح الحصة ←</span>
-    </a>`).join("");
-}).catch(()=>{document.getElementById("list").innerHTML='<div class="empty">تعذر تحميل الحصص.</div>'});
+  el.innerHTML=data.classes.map(c=>{
+    const n=c.sessions.length;
+    const href=n===0?"#":(n===1?c.sessions[0].path:"class.html?c="+c.id);
+    return `<a class="card ${n?"":"off"}" href="${href}">
+      <div class="top"><span class="ic">${c.icon}</span><span class="tag">${n?n+" حصة":"قريبًا"}</span></div>
+      <h3 style="direction:ltr;text-align:right">${c.name}</h3>
+      <p>${c.ar}</p>
+      ${n?'<span class="go">افتح ←</span>':''}
+    </a>`}).join("");
+}).catch(()=>{document.getElementById("list").innerHTML='<div class="empty">تعذر تحميل الكلاسات.</div>'});
 </script>
 </body>
 </html>
