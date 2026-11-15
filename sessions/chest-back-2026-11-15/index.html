@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>حصة صدر وظهر — 15/11/2026</title>
+<style>
+:root{--bg:#0f1720;--card:#1a2431;--card2:#222f40;--text:#eef3f8;--mute:#9fb0c3;--acc:#ff7a2f;--ok:#2ecc71;--line:#2d3b4e}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;line-height:1.55;padding-bottom:110px}
+header{padding:22px 16px 12px;max-width:760px;margin:auto}
+h1{margin:0 0 4px;font-size:22px}
+.sub{color:var(--mute);font-size:14px}
+.bar{height:10px;background:var(--card2);border-radius:99px;overflow:hidden;margin-top:14px}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--acc),var(--ok));transition:width .3s}
+.pct{font-size:13px;color:var(--mute);margin-top:6px}
+main{max-width:760px;margin:auto;padding:0 14px}
+.sec{margin:26px 0 10px;font-size:15px;color:var(--acc);font-weight:700;letter-spacing:.3px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:14px}
+.card.done{border-color:var(--ok)}
+.pic{display:block;width:100%;background:#fff;max-height:340px;object-fit:contain;cursor:zoom-in}
+.pic.tall{max-height:380px}
+.body{padding:14px 14px 16px}
+.num{display:inline-block;background:var(--acc);color:#111;font-weight:800;border-radius:8px;padding:0 9px;margin-inline-end:8px;font-size:14px}
+.en{font-weight:800;font-size:19px;direction:ltr;text-align:right;margin:0}
+.ar{color:var(--mute);font-size:14px;margin:2px 0 10px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+.tag{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:5px 11px;font-size:15px;font-weight:700}
+.tag small{display:block;color:var(--mute);font-weight:400;font-size:11px}
+ol.steps{margin:10px 0 0;padding-inline-start:22px;font-size:15px}
+ol.steps li{margin:3px 0}
+.note{background:#2b2a18;border:1px solid #5b5326;color:#f1e3a0;border-radius:10px;padding:8px 11px;font-size:13px;margin-top:10px}
+.sets{margin-top:12px}
+.set{display:flex;align-items:center;gap:10px;margin:8px 0}
+.set .chip{min-width:46px}
+.set .tr{flex:1;color:var(--mute);font-size:14px}
+.set input{width:92px;height:46px;border-radius:12px;border:2px solid var(--line);background:var(--card2);color:var(--text);font-size:17px;font-weight:700;text-align:center}
+.set input::placeholder{color:#6f8196;font-weight:400;font-size:14px}
+.mus{font-size:13px;color:#c9f3d4;background:#12301d;border:1px solid #1f5a33;border-radius:10px;padding:6px 10px;margin-top:8px}
+.rounds{display:flex;gap:8px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.rounds span{color:var(--mute);font-size:13px}
+.chip{min-width:52px;height:46px;border-radius:12px;border:2px solid var(--line);background:var(--card2);color:var(--text);font-size:16px;font-weight:800;cursor:pointer}
+.chip.on{background:var(--ok);border-color:var(--ok);color:#06210f}
+.gif{display:block;width:100%;max-width:360px;margin:8px auto;border-radius:12px}
+.gl{font-size:12px;color:var(--mute);margin-top:10px}
+.rest{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--card2);border:1px dashed var(--acc);border-radius:14px;padding:12px 14px;margin-bottom:14px}
+.rest b{font-size:16px}
+.btn{background:var(--acc);color:#111;border:0;border-radius:12px;padding:11px 16px;font-size:15px;font-weight:800;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+.sum{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:6px 14px 12px}
+.sum div{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);font-size:15px}
+.sum div:last-child{border:0}
+.sum em{font-style:normal;direction:ltr;font-weight:700}
+.reset{margin:20px 0 0;text-align:center}
+#timer{position:fixed;inset-inline:0;bottom:0;background:#101a26ee;backdrop-filter:blur(6px);border-top:1px solid var(--line);padding:10px 14px calc(10px + env(safe-area-inset-bottom));display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}
+#timer .t{font-size:30px;font-weight:800;min-width:76px;text-align:center;direction:ltr;font-variant-numeric:tabular-nums}
+#timer.go{background:#14341f}
+#timer.end{background:#4a1d12}
+#zoom{position:fixed;inset:0;background:#000d;display:none;align-items:center;justify-content:center;z-index:9;padding:10px}
+#zoom img{max-width:100%;max-height:100%;background:#fff;border-radius:8px}
+</style>
+</head>
+<body>
+<header>
+  <a href="../../" style="color:#9fb0c3;font-size:14px;text-decoration:none">← كل الحصص</a>
+  <h1>حصة صدر وظهر</h1>
+  <div class="sub">15/11/2026 • 8 تمارين • 3 مجموعات لكل تمرين • اختر الوزن الذي تتحمله</div>
+  <div class="bar"><i id="fill"></i></div>
+  <div class="pct" id="pct">0%</div>
+</header>
+<main id="app"></main>
+
+<div id="timer">
+  <span class="t" id="tt">00:00</span>
+  <button class="btn" data-s="60">راحة 60ث</button>
+  <button class="btn" data-s="90">90ث</button>
+  <button class="btn" data-s="30">30ث</button>
+  <button class="btn ghost" id="tstop">إيقاف</button>
+</div>
+<div id="zoom"><img alt=""></div>
+
+<script>
+const EX=[
+{n:"1",en:"Barbell Bench Press",ar:"ضغط البار على البنش",grp:"صدر",img:"img/bench.jpg",reps:["8–12","8–12","8–12"],
+ mus:"الصدر • الكتف الأمامي • الترايسبس",
+ steps:["استلقِ على البنش، والقدمان ثابتتان على الأرض.","امسك البار أوسع قليلًا من الكتفين، ولوحا الكتف للخلف وللأسفل.","أنزل البار ببطء إلى منتصف الصدر.","ادفعه للأعلى بقوة حتى تفرد الذراعين."],
+ note:"يفضّل وجود شخص معك (Spotter) في الأوزان الثقيلة."},
+{n:"2",en:"Lat Pulldown",ar:"سحب البار من فوق",grp:"ظهر",img:"img/lat-pulldown.jpg",reps:["12","10","8"],
+ mus:"اللاتس (جانب الظهر) • أعلى الظهر • البايسبس",
+ steps:["اجلس وثبّت الفخذين تحت الوسادة.","امسك البار أوسع من الكتفين.","اسحب البار نحو أعلى الصدر، والمرفقان للأسفل.","ارجع ببطء حتى تفرد الذراعين."],
+ note:"زد الوزن من مجموعة لأخرى، وانقص العدّات."},
+{n:"3",en:"Incline Dumbbell Press",ar:"ضغط الدمبل على بنش مائل",grp:"صدر",img:"img/incline.jpg",reps:["8–12","8–12","8–12"],
+ mus:"أعلى الصدر • الكتف الأمامي • الترايسبس",
+ steps:["اضبط البنش مائلًا، وظهرك ملتصق به.","ابدأ بالدمبل عند جانبي الصدر.","ادفع الدمبل للأعلى حتى يتقاربا فوق الصدر.","أنزله ببطء وتحكم."]},
+{n:"4",en:"Seated Cable Row",ar:"سحب الكابل جالسًا",grp:"ظهر",img:"img/cable-row.jpg",reps:["12","10","8"],
+ mus:"منتصف الظهر • اللاتس • البايسبس",
+ steps:["اجلس وصدرك مرفوع، والركبتان مثنيتان قليلًا.","اسحب المقبض نحو بطنك، والمرفقان قريبان من الجسم.","اضغط لوحي الكتف معًا لحظة.","ارجع ببطء بدون أن ينحني الظهر."]},
+{n:"5",en:"Pec Deck (Chest Fly Machine)",ar:"فتح وضم الصدر على الجهاز",grp:"صدر",gif:"img/pec-deck.gif",reps:["15","15","15"],
+ mus:"الصدر (عزل) • الكتف الأمامي",
+ steps:["اجلس وظهرك على المسند، والمقابض بمستوى الصدر.","افتح الذراعين حتى تشعر بشد في الصدر.","ضُمّ المقابض أمام الصدر، وانتبه للضغط على الصدر.","ارجع ببطء بدون ارتداد."]},
+{n:"6",en:"Single Dumbbell Row",ar:"سحب دمبل بذراع واحدة",grp:"ظهر",img:"img/db-row.jpg",reps:["15","12","10"],
+ mus:"اللاتس • منتصف الظهر • البايسبس",
+ steps:["اسند يدًا وركبة على البنش، والظهر مستقيم.","ابدأ بالدمبل معلقًا تحت الكتف.","اسحبه نحو الخصر، والمرفق للخلف.","أنزله ببطء. أكمل الجهة الأخرى بنفس العدد."],
+ note:"كل مجموعة = اليمين ثم الشمال بنفس العدّات."},
+{n:"7",en:"Cross-Bench Dumbbell Pullover",ar:"بول أوفر بالدمبل على عرض البنش",grp:"صدر + ظهر",img:"img/pullover.jpg",reps:["15","15","15"],
+ mus:"الصدر • اللاتس • السيراتس • الترايسبس",
+ steps:["البنش بالعرض تحت أعلى الظهر ولوحي الكتف.","امسك دمبلًا واحدًا بكلتا اليدين فوق الصدر.","أنزله في قوس خلف الرأس بذراعين مثنيتين قليلًا.","أرجعه فوق الصدر."],
+ note:"خفيف وهادئ. لا تنزل أكثر من مدى كتفك المريح. توقف عند أي ألم داخل الكتف أو تقوس قوي في أسفل الظهر."},
+{n:"8",en:"Seated Bench V-Ups",ar:"رفع الرجلين والجذع من الجلوس",grp:"بطن",gif:"img/v-ups.gif",reps:["25","15","10"],bw:true,
+ mus:"البطن (الجزء السفلي) • مثنيات الورك",
+ steps:["اجلس على حافة البنش، واليدان خلفك تمسكان البنش.","مِل بالجذع للخلف قليلًا.","ارفع الرجلين وقرّب الجذع منهما معًا.","الزفير أثناء ضم الرجلين، ولا يتقوس أسفل الظهر."],
+ note:"المجموع 50 عدة."}
+];
+const SUM=[["صدر: Bench + Incline + Pec Deck","9 مجموعات"],["ظهر: Lat Pulldown + Cable Row + DB Row","9 مجموعات"],["Pullover (صدر + ظهر)","3 مجموعات"],["V-Ups (بطن)","3 مجموعات = 50 عدة"],["الإجمالي","24 مجموعة"]];
+
+let S={};
+try{S=JSON.parse(localStorage.getItem("gym-cb-1115")||"{}")}catch(e){}
+const save=()=>{try{localStorage.setItem("gym-cb-1115",JSON.stringify(S))}catch(e){}};
+const $=(q,r=document)=>r.querySelector(q);
+const app=$("#app");
+const doneCount=e=>(S[e.id]||[]).filter(Boolean).length;
+EX.forEach(e=>e.id="e"+e.n);
+
+function render(keepFocus){
+  let h="";
+  EX.forEach(e=>{
+    const on=S[e.id]||[],w=S[e.id+"_w"]||[];
+    const done=on.filter(Boolean).length===3;
+    h+=`<div class="sec">${e.grp}</div><div class="card ${done?"done":""}">`;
+    if(e.img)h+=`<img class="pic" src="${e.img}" alt="${e.en}">`;
+    if(e.gif)h+=`<img class="gif" src="${e.gif}" alt="${e.en}" style="margin:0 auto">`;
+    h+=`<div class="body"><p class="en"><span class="num">${e.n}</span>${e.en}</p><p class="ar">${e.ar}</p>`;
+    h+=`<div class="tags"><div class="tag">3<small>المجموعات</small></div><div class="tag"><span dir="ltr">${e.reps[0]}${e.reps[0]===e.reps[2]?"":" → "+e.reps[2]}</span><small>العدّات</small></div></div>`;
+    h+=`<div class="mus">العضلات: ${e.mus}</div>`;
+    h+=`<ol class="steps">${e.steps.map(s=>`<li>${s}</li>`).join("")}</ol>`;
+    if(e.note)h+=`<div class="note">${e.note}</div>`;
+    h+=`<div class="sets">`;
+    for(let i=0;i<3;i++){
+      h+=`<div class="set"><button class="chip ${on[i]?"on":""}" data-id="${e.id}" data-i="${i}">${on[i]?"✓":i+1}</button><span class="tr"><span dir="ltr">${e.reps[i]}</span> عدة</span>`;
+      if(!e.bw)h+=`<input type="number" inputmode="decimal" placeholder="كجم" value="${w[i]??""}" data-w="${e.id}" data-i="${i}">`;
+      h+=`</div>`;
+    }
+    h+=`</div></div></div>`;
+  });
+  h+=`<div class="sec">الملخص</div><div class="sum">${SUM.map(r=>`<div><span>${r[0]}</span><em>${r[1]}</em></div>`).join("")}</div>`;
+  h+=`<div class="reset"><button class="btn ghost" id="reset">ابدأ من جديد (مسح العلامات)</button></div>`;
+  app.innerHTML=h;progress();
+}
+function progress(){
+  const tot=EX.length*3;let d=0;EX.forEach(e=>d+=doneCount(e));
+  const p=Math.round(d/tot*100);$("#fill").style.width=p+"%";$("#pct").textContent=p+"% — "+d+" من "+tot+" مجموعة";
+}
+app.addEventListener("click",ev=>{
+  const c=ev.target.closest(".chip");
+  if(c){const id=c.dataset.id,i=+c.dataset.i;const a=S[id]||[];a[i]=!a[i];S[id]=a;save();
+    const was=window.scrollY;render();window.scrollTo(0,was);
+    if(a[i])startT(60);return}
+  if(ev.target.id==="reset"){const r=ev.target;
+    if(r.dataset.sure){S={};save();render()}
+    else{r.dataset.sure=1;r.textContent="اضغط مرة ثانية للتأكيد";setTimeout(()=>{r.dataset.sure="";r.textContent="ابدأ من جديد (مسح العلامات)"},3000)}return}
+  if(ev.target.classList.contains("pic")||ev.target.classList.contains("gif")){const z=$("#zoom");$("img",z).src=ev.target.src;z.style.display="flex"}
+});
+app.addEventListener("input",ev=>{
+  const t=ev.target;if(t.dataset.w){const a=S[t.dataset.w+"_w"]||[];a[+t.dataset.i]=t.value;S[t.dataset.w+"_w"]=a;save()}
+});
+$("#zoom").onclick=()=>{$("#zoom").style.display="none"};
+document.querySelectorAll("#timer [data-s]").forEach(b=>b.onclick=()=>startT(+b.dataset.s));
+
+let T=null,left=0;const box=$("#timer"),tt=$("#tt");
+const fmt=s=>String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0");
+function beep(){try{const a=new (window.AudioContext||window.webkitAudioContext)(),o=a.createOscillator();o.connect(a.destination);o.frequency.value=880;o.start();setTimeout(()=>o.stop(),350)}catch(e){}try{navigator.vibrate&&navigator.vibrate(300)}catch(e){}}
+function startT(s){clearInterval(T);left=s;tt.textContent=fmt(left);box.className="go";
+  T=setInterval(()=>{left--;tt.textContent=fmt(Math.max(left,0));if(left<=0){clearInterval(T);box.className="end";beep();setTimeout(()=>box.className="",2500)}},1000)}
+$("#tstop").onclick=()=>{clearInterval(T);tt.textContent="00:00";box.className=""};
+render();
+</script>
+</body>
+</html>

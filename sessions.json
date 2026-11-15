@@ -1,13 +1,67 @@
 {
   "classes": [
-    {"id": "cardio", "name": "Class Cardio", "ar": "كارديو", "icon": "🏃",
-     "sessions": [
-       {"title": "الحصة السادسة", "date": "03/09/2026", "summary": "دائرة جسم كامل 3 مرات ثم Knee Raise", "path": "sessions/session-06-cardio/"}
-     ]},
-    {"id": "chest", "name": "Class Chest", "ar": "صدر", "icon": "🏋️", "sessions": []},
-    {"id": "back", "name": "Class Back", "ar": "ظهر", "icon": "🔙", "sessions": []},
-    {"id": "shoulder", "name": "Class Shoulder", "ar": "أكتاف", "icon": "🤸", "sessions": []},
-    {"id": "legs", "name": "Class Legs", "ar": "رجلين", "icon": "🦵", "sessions": []},
-    {"id": "arms", "name": "Class Arms", "ar": "ذراعين", "icon": "💪", "sessions": []}
+    {
+      "id": "cardio",
+      "name": "Class Cardio",
+      "ar": "كارديو",
+      "icon": "🏃",
+      "sessions": [
+        {
+          "title": "الحصة السادسة",
+          "date": "03/09/2026",
+          "summary": "دائرة جسم كامل 3 مرات ثم Knee Raise",
+          "path": "sessions/session-06-cardio/"
+        }
+      ]
+    },
+    {
+      "id": "chest-back",
+      "name": "Class Chest & Back",
+      "ar": "صدر وظهر",
+      "icon": "💪",
+      "sessions": [
+        {
+          "title": "حصة صدر وظهر",
+          "date": "15/11/2026",
+          "summary": "8 تمارين، 3 مجموعات لكل تمرين، وتسجيل الوزن",
+          "path": "sessions/chest-back-2026-11-15/"
+        }
+      ]
+    },
+    {
+      "id": "chest",
+      "name": "Class Chest",
+      "ar": "صدر",
+      "icon": "🏋️",
+      "sessions": []
+    },
+    {
+      "id": "back",
+      "name": "Class Back",
+      "ar": "ظهر",
+      "icon": "🔙",
+      "sessions": []
+    },
+    {
+      "id": "shoulder",
+      "name": "Class Shoulder",
+      "ar": "أكتاف",
+      "icon": "🤸",
+      "sessions": []
+    },
+    {
+      "id": "legs",
+      "name": "Class Legs",
+      "ar": "رجلين",
+      "icon": "🦵",
+      "sessions": []
+    },
+    {
+      "id": "arms",
+      "name": "Class Arms",
+      "ar": "ذراعين",
+      "icon": "💪",
+      "sessions": []
+    }
   ]
 }
