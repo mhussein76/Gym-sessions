@@ -61,7 +61,14 @@
       "name": "Class Arms",
       "ar": "ذراعين",
       "icon": "💪",
-      "sessions": []
+      "sessions": [
+        {
+          "title": "حصة ذراع",
+          "date": "19/11/2026",
+          "summary": "بايسبس + ترايسبس + ساعد، 8 تمارين، 3 مجموعات",
+          "path": "sessions/arms-2026-11-19/"
+        }
+      ]
     }
   ]
 }

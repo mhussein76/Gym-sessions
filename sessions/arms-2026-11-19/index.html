@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>حصة ذراع — 19/11/2026</title>
+<style>
+:root{--bg:#0f1720;--card:#1a2431;--card2:#222f40;--text:#eef3f8;--mute:#9fb0c3;--acc:#ff7a2f;--ok:#2ecc71;--line:#2d3b4e}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;line-height:1.55;padding-bottom:110px}
+header{padding:22px 16px 12px;max-width:760px;margin:auto}
+h1{margin:0 0 4px;font-size:22px}
+.sub{color:var(--mute);font-size:14px}
+.bar{height:10px;background:var(--card2);border-radius:99px;overflow:hidden;margin-top:14px}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--acc),var(--ok));transition:width .3s}
+.pct{font-size:13px;color:var(--mute);margin-top:6px}
+main{max-width:760px;margin:auto;padding:0 14px}
+.sec{margin:26px 0 10px;font-size:15px;color:var(--acc);font-weight:700;letter-spacing:.3px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:14px}
+.card.done{border-color:var(--ok)}
+.pic{display:block;width:100%;background:#fff;max-height:340px;object-fit:contain;cursor:zoom-in}
+.pic.tall{max-height:380px}
+.body{padding:14px 14px 16px}
+.num{display:inline-block;background:var(--acc);color:#111;font-weight:800;border-radius:8px;padding:0 9px;margin-inline-end:8px;font-size:14px}
+.en{font-weight:800;font-size:19px;direction:ltr;text-align:right;margin:0}
+.ar{color:var(--mute);font-size:14px;margin:2px 0 10px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+.tag{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:5px 11px;font-size:15px;font-weight:700}
+.tag small{display:block;color:var(--mute);font-weight:400;font-size:11px}
+ol.steps{margin:10px 0 0;padding-inline-start:22px;font-size:15px}
+ol.steps li{margin:3px 0}
+.note{background:#2b2a18;border:1px solid #5b5326;color:#f1e3a0;border-radius:10px;padding:8px 11px;font-size:13px;margin-top:10px}
+.sets{margin-top:12px}
+.set{display:flex;align-items:center;gap:10px;margin:8px 0}
+.set .chip{min-width:46px}
+.set .tr{flex:1;color:var(--mute);font-size:14px}
+.set input{width:92px;height:46px;border-radius:12px;border:2px solid var(--line);background:var(--card2);color:var(--text);font-size:17px;font-weight:700;text-align:center}
+.set input::placeholder{color:#6f8196;font-weight:400;font-size:14px}
+.nt{width:100%;min-height:54px;margin-top:10px;border-radius:12px;border:2px solid var(--line);background:var(--card2);color:var(--text);font:inherit;font-size:15px;padding:10px;resize:vertical}
+.nt::placeholder{color:#6f8196}
+.mus{font-size:13px;color:#c9f3d4;background:#12301d;border:1px solid #1f5a33;border-radius:10px;padding:6px 10px;margin-top:8px}
+.rounds{display:flex;gap:8px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.rounds span{color:var(--mute);font-size:13px}
+.chip{min-width:52px;height:46px;border-radius:12px;border:2px solid var(--line);background:var(--card2);color:var(--text);font-size:16px;font-weight:800;cursor:pointer}
+.chip.on{background:var(--ok);border-color:var(--ok);color:#06210f}
+.gif{display:block;width:100%;max-width:360px;margin:8px auto;border-radius:12px}
+.gl{font-size:12px;color:var(--mute);margin-top:10px}
+.rest{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--card2);border:1px dashed var(--acc);border-radius:14px;padding:12px 14px;margin-bottom:14px}
+.rest b{font-size:16px}
+.btn{background:var(--acc);color:#111;border:0;border-radius:12px;padding:11px 16px;font-size:15px;font-weight:800;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+.sum{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:6px 14px 12px}
+.sum div{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);font-size:15px}
+.sum div:last-child{border:0}
+.sum em{font-style:normal;direction:ltr;font-weight:700}
+.reset{margin:20px 0 0;text-align:center}
+#timer{position:fixed;inset-inline:0;bottom:0;background:#101a26ee;backdrop-filter:blur(6px);border-top:1px solid var(--line);padding:10px 14px calc(10px + env(safe-area-inset-bottom));display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}
+#timer .t{font-size:30px;font-weight:800;min-width:76px;text-align:center;direction:ltr;font-variant-numeric:tabular-nums}
+#timer.go{background:#14341f}
+#timer.end{background:#4a1d12}
+#zoom{position:fixed;inset:0;background:#000d;display:none;align-items:center;justify-content:center;z-index:9;padding:10px}
+#zoom img{max-width:100%;max-height:100%;background:#fff;border-radius:8px}
+</style>
+</head>
+<body>
+<header>
+  <a href="../../" style="color:#9fb0c3;font-size:14px;text-decoration:none">← كل الحصص</a>
+  <h1>حصة ذراع</h1>
+  <div class="sub">19/11/2026 • 8 تمارين • 3 مجموعات لكل تمرين • اختر الوزن الذي تتحمله</div>
+  <div class="bar"><i id="fill"></i></div>
+  <div class="pct" id="pct">0%</div>
+</header>
+<main id="app"></main>
+
+<div id="timer">
+  <span class="t" id="tt">00:00</span>
+  <button class="btn" data-s="60">راحة 60ث</button>
+  <button class="btn" data-s="90">90ث</button>
+  <button class="btn" data-s="30">30ث</button>
+  <button class="btn ghost" id="tstop">إيقاف</button>
+</div>
+<div id="zoom"><img alt=""></div>
+
+<script>
+const EX=[
+{"n": "1", "en": "EZ-Bar Curl — Close Grip", "ar": "كيرل بالبار المنحني — قبضة ضيقة", "grp": "بايسبس", "img": "img/ez-close.jpg", "gif": "img/ez-curl-close.gif", "reps": ["12", "10", "8"], "mus": "البايسبس (الرأس الطويل) • Brachialis", "steps": ["قف مستقيمًا، واليدان قريبتان من بعض على المنحنى الداخلي للبار.", "المرفقان ملاصقان للجسم ولا يتحركان.", "اثنِ المرفقين وارفع البار حتى تضغط البايسبس.", "أنزله ببطء حتى تكاد الذراعان تستقيمان."], "note": "ابدأ بوزن خفيف يسمح بحركة نظيفة بدون هزّ الجسم.", "link": "https://x.com/seth1jr/status/2118220581581508774/video/1?s=48"},
+{"n": "2", "en": "Rope Pushdown", "ar": "دفع الحبل لأسفل بالكابل", "grp": "ترايسبس", "img": "img/rope-pushdown.jpg", "gif": "img/rope-pushdown.gif", "reps": ["15", "12", "12"], "mus": "الترايسبس (الرأس الوسطي والجانبي)", "steps": ["قف أمام الكابل العالي والجسم مائل قليلًا للأمام.", "المرفقان ملاصقان لجانبيك.", "ادفع الحبل لأسفل حتى تفرد الذراعين، وافتح الحبل في الآخر.", "ارجع لأعلى ببطء والمرفقان ثابتان."]},
+{"n": "3", "en": "EZ-Bar Curl — Wide Grip", "ar": "كيرل بالبار المنحني — قبضة واسعة", "grp": "بايسبس", "img": "img/ez-wide.jpg", "gif": "img/ez-curl-wide.gif", "reps": ["12", "10", "10"], "mus": "البايسبس (الرأس القصير)", "steps": ["قف مستقيمًا، واليدان واسعتان على المنحنيين الخارجيين للبار.", "المرفقان ملاصقان للجسم.", "ارفع البار واضغط البايسبس.", "أنزله ببطء وبتحكم."], "link": "https://x.com/seth1jr/status/2118220581581508774/video/1?s=48"},
+{"n": "4", "en": "Straight-Bar Pushdown", "ar": "دفع البار المستقيم لأسفل بالكابل", "grp": "ترايسبس", "img": "img/bar-pushdown.jpg", "gif": "img/bar-pushdown.gif", "reps": ["12", "12", "12"], "mus": "الترايسبس كله", "steps": ["قف أمام الكابل العالي والجسم مائل للأمام.", "امسك البار والمرفقان ملاصقان للجسم.", "ادفع البار لأسفل حتى تفرد الذراعين واضغط الترايسبس.", "ارجع لأعلى ببطء."]},
+{"n": "5", "en": "Seated Hammer Curl", "ar": "كيرل هامر جالسًا", "grp": "بايسبس", "img": "img/hammer.jpg", "gif": "img/hammer-curl.gif", "reps": ["12", "12", "12"], "mus": "البايسبس • Brachialis • الساعد", "steps": ["اجلس وظهرك مسنود، ودمبل في كل يد والكفان متقابلان.", "المرفقان ملاصقان لجانبيك.", "ارفع الدمبل حتى الكتف بدون لف الرسغ.", "أنزله ببطء."], "note": "ابدأ بـ8 كجم تقريبًا وزوّد حسب إحساسك.", "link": "https://x.com/seth1jr/status/2118220581581508774/video/1?s=48"},
+{"n": "6", "en": "Overhead Cable Extension", "ar": "فرد الذراعين فوق الرأس بالكابل", "grp": "ترايسبس", "img": "img/overhead.jpg", "gif": "img/overhead-extension.gif", "reps": ["12", "12", "12"], "mus": "الترايسبس (الرأس الطويل)", "steps": ["أعطِ ظهرك للكابل، والجسم مائل للأمام ورجل أمام الأخرى.", "امسك الحبل خلف الرأس والمرفقان للأمام.", "افرد الذراعين للأمام وللأعلى حتى تستقيما.", "اثنِ المرفقين ببطء، والمرفقان لا يتحركان."], "note": "وزن خفيف. لا تنزل أكثر من مدى كتفك المريح، وتوقف عند أي شد داخل الكتف."},
+{"n": "7", "en": "Wrist Curl", "ar": "ثني الرسغ (الكف لأعلى)", "grp": "ساعد", "img": "img/wrist-curl.jpg", "gif": "img/wrist-curl.gif", "reps": ["20", "20", "20"], "mus": "عضلات الساعد (القابضة)", "steps": ["اجلس واسند الساعد على البنش والكف لأعلى والرسغ خارج حافة البنش.", "أنزل الدمبل ببطء مع فتح الأصابع قليلًا.", "اثنِ الرسغ وارفع الدمبل لأعلى.", "اضغط الساعد لحظة."], "note": "وزن خفيف 4–6 كجم. الحركة من الرسغ فقط.", "link": "https://x.com/gymsociety/status/2116849858854449317/video/1?s=48"},
+{"n": "8", "en": "Reverse Wrist Curl", "ar": "ثني الرسغ العكسي (الكف لأسفل)", "grp": "ساعد", "img": "img/reverse-wrist.jpg", "gif": "img/reverse-wrist-curl.gif", "reps": ["20", "20", "20"], "mus": "عضلات الساعد (الباسطة)", "steps": ["اسند الساعد على البنش والكف لأسفل والرسغ خارج الحافة.", "أنزل الدمبل ببطء.", "ارفع ظهر اليد لأعلى.", "اضغط أعلى الساعد لحظة."], "note": "وزن خفيف 4–6 كجم.", "link": "https://x.com/gymsociety/status/2116849858854449317/video/1?s=48"}
+];
+const SUM=[["بايسبس: EZ Close + EZ Wide + Hammer","9 مجموعات"],["ترايسبس: Rope + Bar Pushdown + Overhead","9 مجموعات"],["ساعد: Wrist Curl + Reverse Wrist Curl","6 مجموعات"],["الإجمالي","24 مجموعة"]];
+
+let S={};
+try{S=JSON.parse(localStorage.getItem("gym-arms-1119")||"{}")}catch(e){}
+const save=()=>{try{localStorage.setItem("gym-arms-1119",JSON.stringify(S))}catch(e){}};
+const $=(q,r=document)=>r.querySelector(q);
+const app=$("#app");
+const doneCount=e=>(S[e.id]||[]).filter(Boolean).length;
+EX.forEach(e=>e.id="e"+e.n);
+
+function render(keepFocus){
+  let h="";
+  EX.forEach(e=>{
+    const on=S[e.id]||[],w=S[e.id+"_w"]||[];
+    const done=on.filter(Boolean).length===3;
+    h+=`<div class="sec">${e.grp}</div><div class="card ${done?"done":""}">`;
+    if(e.img)h+=`<img class="pic" src="${e.img}" alt="${e.en}">`;
+    if(e.gif)h+=`<div class="gl" style="padding:8px 14px 0">الحركة — الأخضر = العضلة العاملة</div><img class="gif" src="${e.gif}" alt="${e.en}" style="margin:6px auto">`;
+    h+=`<div class="body"><p class="en"><span class="num">${e.n}</span>${e.en}</p><p class="ar">${e.ar}</p>`;
+    h+=`<div class="tags"><div class="tag">3<small>المجموعات</small></div><div class="tag"><span dir="ltr">${e.reps[0]}${e.reps[0]===e.reps[2]?"":" → "+e.reps[2]}</span><small>العدّات</small></div></div>`;
+    h+=`<div class="mus">العضلات: ${e.mus}</div>`;
+    h+=`<ol class="steps">${e.steps.map(s=>`<li>${s}</li>`).join("")}</ol>`;
+    if(e.link)h+=`<div class="note" style="background:#13304a;color:#9fd0ff"><a href="${e.link}" target="_blank" rel="noopener" style="color:#9fd0ff">فيديو مرجعي للتمرين ↗</a></div>`;
+    if(e.note)h+=`<div class="note">${e.note}</div>`;
+    h+=`<div class="sets">`;
+    for(let i=0;i<3;i++){
+      h+=`<div class="set"><button class="chip ${on[i]?"on":""}" data-id="${e.id}" data-i="${i}">${on[i]?"✓":i+1}</button><span class="tr"><span dir="ltr">${e.reps[i]}</span> عدة</span>`;
+      if(!e.bw)h+=`<input type="number" inputmode="decimal" placeholder="كجم" value="${w[i]??""}" data-w="${e.id}" data-i="${i}">`;
+      h+=`</div>`;
+    }
+    h+=`</div><textarea class="nt" data-n="${e.id}" placeholder="ملاحظاتك على هذا التمرين...">${S[e.id+"_n"]||""}</textarea></div></div>`;
+  });
+  h+=`<div class="sec">الملخص</div><div class="sum">${SUM.map(r=>`<div><span>${r[0]}</span><em>${r[1]}</em></div>`).join("")}</div>`;
+  h+=`<div class="sec">ملاحظات الحصة</div><textarea class="nt" data-n="gen" placeholder="كيف كانت الحصة؟ التعب، الألم، أي شيء تريد تذكره...">${S.gen_n||""}</textarea>`;
+  h+=`<div class="reset"><button class="btn" id="copy">نسخ ملخص الحصة</button></div><textarea class="nt" id="out" readonly style="display:none;min-height:180px"></textarea>`;
+  h+=`<div class="reset"><button class="btn ghost" id="reset">ابدأ من جديد (مسح العلامات)</button></div>`;
+  app.innerHTML=h;progress();
+}
+function progress(){
+  const tot=EX.length*3;let d=0;EX.forEach(e=>d+=doneCount(e));
+  const p=Math.round(d/tot*100);$("#fill").style.width=p+"%";$("#pct").textContent=p+"% — "+d+" من "+tot+" مجموعة";
+}
+app.addEventListener("click",ev=>{
+  const c=ev.target.closest(".chip");
+  if(c){const id=c.dataset.id,i=+c.dataset.i;const a=S[id]||[];a[i]=!a[i];S[id]=a;save();
+    const was=window.scrollY;render();window.scrollTo(0,was);
+    if(a[i])startT(60);return}
+  if(ev.target.id==="copy"){
+    let t="حصة ذراع — 19/11/2026\n";
+    EX.forEach(e=>{const on=S[e.id]||[],w=S[e.id+"_w"]||[];
+      t+="\n"+e.n+". "+e.en+": "+[0,1,2].map(i=>(on[i]?"✓":"✗")+(e.bw?"":" "+(w[i]?w[i]+" كجم":"-"))).join(" | ");
+      if(S[e.id+"_n"])t+="\n   ملاحظة: "+S[e.id+"_n"]});
+    if(S.gen_n)t+="\n\nملاحظات الحصة: "+S.gen_n;
+    const out=$("#out");out.value=t;out.style.display="block";out.focus();out.select();
+    try{navigator.clipboard.writeText(t).then(()=>{ev.target.textContent="تم النسخ ✓"},()=>{ev.target.textContent="انسخ النص من الأسفل"})}catch(e){ev.target.textContent="انسخ النص من الأسفل"}
+    return}
+  if(ev.target.id==="reset"){const r=ev.target;
+    if(r.dataset.sure){S={};save();render()}
+    else{r.dataset.sure=1;r.textContent="اضغط مرة ثانية للتأكيد";setTimeout(()=>{r.dataset.sure="";r.textContent="ابدأ من جديد (مسح العلامات)"},3000)}return}
+  if(ev.target.classList.contains("pic")||ev.target.classList.contains("gif")){const z=$("#zoom");$("img",z).src=ev.target.src;z.style.display="flex"}
+});
+app.addEventListener("input",ev=>{
+  const t=ev.target;if(t.dataset.n){S[t.dataset.n==="gen"?"gen_n":t.dataset.n+"_n"]=t.value;save();return}
+  if(t.dataset.w){const a=S[t.dataset.w+"_w"]||[];a[+t.dataset.i]=t.value;S[t.dataset.w+"_w"]=a;save()}
+});
+$("#zoom").onclick=()=>{$("#zoom").style.display="none"};
+document.querySelectorAll("#timer [data-s]").forEach(b=>b.onclick=()=>startT(+b.dataset.s));
+
+let T=null,left=0;const box=$("#timer"),tt=$("#tt");
+const fmt=s=>String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0");
+function beep(){try{const a=new (window.AudioContext||window.webkitAudioContext)(),o=a.createOscillator();o.connect(a.destination);o.frequency.value=880;o.start();setTimeout(()=>o.stop(),350)}catch(e){}try{navigator.vibrate&&navigator.vibrate(300)}catch(e){}}
+function startT(s){clearInterval(T);left=s;tt.textContent=fmt(left);box.className="go";
+  T=setInterval(()=>{left--;tt.textContent=fmt(Math.max(left,0));if(left<=0){clearInterval(T);box.className="end";beep();setTimeout(()=>box.className="",2500)}},1000)}
+$("#tstop").onclick=()=>{clearInterval(T);tt.textContent="00:00";box.className=""};
+render();
+</script>
+</body>
+</html>
