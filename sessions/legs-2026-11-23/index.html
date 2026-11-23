@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>حصة رجل — 23/11/2026</title>
+<style>
+:root{--bg:#0f1720;--card:#1a2431;--card2:#222f40;--text:#eef3f8;--mute:#9fb0c3;--acc:#ff7a2f;--ok:#2ecc71;--line:#2d3b4e}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;line-height:1.55;padding-bottom:110px}
+header{padding:22px 16px 12px;max-width:760px;margin:auto}
+h1{margin:0 0 4px;font-size:22px}
+.sub{color:var(--mute);font-size:14px}
+.bar{height:10px;background:var(--card2);border-radius:99px;overflow:hidden;margin-top:14px}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--acc),var(--ok));transition:width .3s}
+.pct{font-size:13px;color:var(--mute);margin-top:6px}
+main{max-width:760px;margin:auto;padding:0 14px}
+.sec{margin:26px 0 10px;font-size:15px;color:var(--acc);font-weight:700;letter-spacing:.3px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:14px}
+.card.done{border-color:var(--ok)}
+.pic{display:block;width:100%;background:#fff;max-height:420px;object-fit:contain;cursor:zoom-in}
+.pic.tall{max-height:380px}
+.body{padding:14px 14px 16px}
+.num{display:inline-block;background:var(--acc);color:#111;font-weight:800;border-radius:8px;padding:0 9px;margin-inline-end:8px;font-size:14px}
+.en{font-weight:800;font-size:19px;direction:ltr;text-align:right;margin:0}
+.ar{color:var(--mute);font-size:14px;margin:2px 0 10px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+.tag{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:5px 11px;font-size:15px;font-weight:700}
+.tag small{display:block;color:var(--mute);font-weight:400;font-size:11px}
+ol.steps{margin:10px 0 0;padding-inline-start:22px;font-size:15px}
+ol.steps li{margin:3px 0}
+.note{background:#2b2a18;border:1px solid #5b5326;color:#f1e3a0;border-radius:10px;padding:8px 11px;font-size:13px;margin-top:10px}
+.sets{margin-top:12px}
+.set{display:flex;align-items:center;gap:10px;margin:8px 0}
+.set .chip{min-width:46px}
+.set .tr{flex:1;color:var(--mute);font-size:14px}
+.set input{width:92px;height:46px;border-radius:12px;border:2px solid var(--line);background:var(--card2);color:var(--text);font-size:17px;font-weight:700;text-align:center}
+.set input::placeholder{color:#6f8196;font-weight:400;font-size:14px}
+.nt{width:100%;min-height:54px;margin-top:10px;border-radius:12px;border:2px solid var(--line);background:var(--card2);color:var(--text);font:inherit;font-size:15px;padding:10px;resize:vertical}
+.nt::placeholder{color:#6f8196}
+.mus{font-size:13px;color:#c9f3d4;background:#12301d;border:1px solid #1f5a33;border-radius:10px;padding:6px 10px;margin-top:8px}
+.rounds{display:flex;gap:8px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.rounds span{color:var(--mute);font-size:13px}
+.chip{min-width:52px;height:46px;border-radius:12px;border:2px solid var(--line);background:var(--card2);color:var(--text);font-size:16px;font-weight:800;cursor:pointer}
+.chip.on{background:var(--ok);border-color:var(--ok);color:#06210f}
+.gif{display:block;width:100%;max-width:360px;margin:8px auto;border-radius:12px}
+.gl{font-size:12px;color:var(--mute);margin-top:10px}
+.rest{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--card2);border:1px dashed var(--acc);border-radius:14px;padding:12px 14px;margin-bottom:14px}
+.rest b{font-size:16px}
+.btn{background:var(--acc);color:#111;border:0;border-radius:12px;padding:11px 16px;font-size:15px;font-weight:800;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+.sum{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:6px 14px 12px}
+.sum div{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);font-size:15px}
+.sum div:last-child{border:0}
+.sum em{font-style:normal;direction:ltr;font-weight:700}
+.reset{margin:20px 0 0;text-align:center}
+#timer{position:fixed;inset-inline:0;bottom:0;background:#101a26ee;backdrop-filter:blur(6px);border-top:1px solid var(--line);padding:10px 14px calc(10px + env(safe-area-inset-bottom));display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}
+#timer .t{font-size:30px;font-weight:800;min-width:76px;text-align:center;direction:ltr;font-variant-numeric:tabular-nums}
+#timer.go{background:#14341f}
+#timer.end{background:#4a1d12}
+#zoom{position:fixed;inset:0;background:#000d;display:none;align-items:center;justify-content:center;z-index:9;padding:10px}
+#zoom img{max-width:100%;max-height:100%;background:#fff;border-radius:8px}
+</style>
+</head>
+<body>
+<header>
+  <a href="../../" style="color:#9fb0c3;font-size:14px;text-decoration:none">← كل الحصص</a>
+  <h1>حصة رجل</h1>
+  <div class="sub">23/11/2026 • 7 تمارين • 3 مجموعات لكل تمرين • اختر الوزن الذي تتحمله</div>
+  <div class="bar"><i id="fill"></i></div>
+  <div class="pct" id="pct">0%</div>
+</header>
+<main id="app"></main>
+
+<div id="timer">
+  <span class="t" id="tt">00:00</span>
+  <button class="btn" data-s="60">راحة 60ث</button>
+  <button class="btn" data-s="90">90ث</button>
+  <button class="btn" data-s="30">30ث</button>
+  <button class="btn ghost" id="tstop">إيقاف</button>
+</div>
+<div id="zoom"><img alt=""></div>
+
+<script>
+const EX=[{"n": "1", "en": "Leg Press — Feet in the Middle", "ar": "ضغط الرجل — القدمان في منتصف المنصة", "grp": "فخذ أمامي", "img": "img/lp-mid.jpg", "gif": "img/leg-press-mid.gif", "reps": ["15", "15", "15"], "mus": "الفخذ الأمامي (Quadriceps) • الأرداف", "steps": ["اجلس وظهرك ملتصق بالمسند، والحوض لا يرتفع عن المقعد طوال الحركة.", "ضع القدمين في منتصف المنصة بعرض الكتفين، وأصابع القدم للأمام.", "ادفع المنصة بكل القدم حتى تكاد الرجلان تستقيمان، ولا تقفل الركبتين.", "انزل ببطء حتى تصل الركبتان لحوالي 90 درجة، والركبتان في اتجاه أصابع القدم."], "note": "ابدأ بوزن خفيف (حوالي 40–50 كجم) لأن عندك 3 أوضاع. النفس منتظم، لا تحبس النفس.", "link": "https://x.com/gymsociety/status/2111925929224130772/video/1?a=X8XE-upa2RLaKbG8q14&s=46"}, {"n": "2", "en": "Leg Press — Feet High", "ar": "ضغط الرجل — القدمان في أعلى المنصة", "grp": "أرداف وفخذ خلفي", "img": "img/lp-high.jpg", "gif": "img/leg-press-high.gif", "reps": ["15", "15", "15"], "mus": "الأرداف (Glutes) • الفخذ الخلفي (Hamstrings)", "steps": ["نفس الجلسة: الظهر ملتصق والحوض على المقعد.", "ضع القدمين في الجزء العلوي من المنصة، بعرض الكتفين.", "ادفع بالكعبين (وليس بأصابع القدم) واضغط الأرداف في الآخر.", "انزل ببطء، ولا تنزل لدرجة يرتفع فيها الحوض عن المقعد."], "note": "هذا الوضع يشدّ الأرداف أكثر، فاجعل الوزن أخف قليلًا من الوضع الأول.", "link": "https://x.com/gymsociety/status/2111925929224130772/video/1?a=X8XE-upa2RLaKbG8q14&s=46"}, {"n": "3", "en": "Leg Press — Wide Feet", "ar": "ضغط الرجل — القدمان واسعتان", "grp": "فخذ داخلي", "img": "img/lp-wide.jpg", "gif": "img/leg-press-wide.gif", "reps": ["15", "15", "15"], "mus": "الفخذ الداخلي (Adductors) • الأرداف", "steps": ["الظهر ملتصق والحوض على المقعد.", "ضع القدمين واسعتين على المنصة وأصابع القدم لبرّه قليلًا (حوالي 30 درجة).", "ادفع المنصة والركبتان تتبعان اتجاه أصابع القدم، ولا تدعهما تنطبقان لداخل.", "انزل ببطء حتى تشعر بشد في الفخذ الداخلي، ثم ادفع."], "note": "لا تتسع القدمان أكثر من اللازم. اجعل الوزن أخف، والحركة بتحكم.", "link": "https://x.com/gymsociety/status/2111925929224130772/video/1?a=X8XE-upa2RLaKbG8q14&s=46"}, {"n": "4", "en": "Seated Leg Curl", "ar": "ثني الرجل جالسًا (الفخذ الخلفي)", "grp": "فخذ خلفي", "gif": "img/leg-curl.gif", "reps": ["15", "15", "15"], "mus": "الفخذ الخلفي (Hamstrings) • السمانة", "steps": ["اجلس وظهرك مسنود، وضع الوسادة العلوية على فخذيك بحيث لا ترتفع.", "ضع الكعبين فوق وسادة الجهاز والرجلان مفرودتان.", "اسحب الوسادة لأسفل وللخلف بالكعبين واضغط الفخذ الخلفي.", "ارجع ببطء ولا تدع الوزن يسقط."], "note": "آخر مرة لعبت بين 25 و37 كجم. اختر وزنًا يسمح بـ15 عدّة نظيفة."}, {"n": "5", "en": "Supported Bulgarian Split Squat", "ar": "سكوات بلغاري بدعم (لكل رجل)", "grp": "فخذ أمامي وأرداف", "gif": "img/bulgarian-split-squat.gif", "reps": ["10", "10", "10"], "mus": "الفخذ الأمامي • الأرداف", "steps": ["ضع القدم الخلفية على البنش (فوق أصابع القدم)، وخطوة كبيرة للأمام بالقدم الأمامية.", "أمسك دعامة ثابتة بيد واحدة، والصدر مرفوع والجسم مستقيم.", "انزل عموديًا حتى تصل الركبة الأمامية لحوالي 90 درجة، وركبتك فوق القدم.", "ادفع بالكعب الأمامي لتقف. بدّل الرجل بعد الانتهاء من العدّات."], "note": "10 عدّات لكل رجل. ابدأ بوزن الجسم، ثم دمبل 8 كجم لو الحركة مريحة. توقف لو شعرت بألم في الركبة."}, {"n": "6", "en": "Leg Extension", "ar": "فرد الرجل جالسًا (الفخذ الأمامي)", "grp": "فخذ أمامي", "gif": "img/leg-extension.gif", "reps": ["15", "15", "15"], "mus": "الفخذ الأمامي (Quadriceps)", "steps": ["اجلس وظهرك مسنود، والوسادة على مقدمة الساق فوق الكعبين.", "افرد الرجلين حتى تستقيما واضغط الفخذ الأمامي لحظة.", "انزل ببطء وبتحكم، بدون ترجيح.", "لا تقفل الركبتين بقوة في الأعلى."], "note": "وزن خفيف (حوالي 25 كجم). توقف لو شعرت بألم في الركبة."}, {"n": "7", "en": "Leg Press Calf Raise", "ar": "رفع السمانة على جهاز Leg Press", "grp": "سمانة", "img": "img/lp-calf.jpg", "gif": "img/leg-press-calf.gif", "reps": ["20", "20", "20"], "mus": "عضلات السمانة (Calves)", "steps": ["اجلس كما في التمارين السابقة، وضع أصابع القدم فقط على الحافة السفلية للمنصة، والكعبان خارج الحافة.", "الركبتان شبه مستقيمتين وغير مقفولتين، ولا تتحركان طوال التمرين.", "ادفع بأصابع القدم لأعلى (كأنك تقف على أطراف الأصابع) واضغط السمانة ثانية.", "أنزل الكعبين ببطء حتى تشعر بتمدد كامل في السمانة."], "note": "وزن خفيف إلى متوسط (حوالي 30–40 كجم). الحركة من الكاحل فقط.", "link": "https://x.com/gymsociety/status/2111925929224130772/video/1?a=X8XE-upa2RLaKbG8q14&s=46"}];
+const SUM=[["Leg Press (3 أوضاع)", "9 مجموعات"], ["Leg Curl + Leg Extension", "6 مجموعات"], ["Bulgarian Split Squat", "3 مجموعات"], ["Leg Press Calf Raise", "3 مجموعات"], ["الإجمالي", "21 مجموعة"]];
+
+let S={};
+try{S=JSON.parse(localStorage.getItem("gym-legs-1123")||"{}")}catch(e){}
+const save=()=>{try{localStorage.setItem("gym-legs-1123",JSON.stringify(S))}catch(e){}};
+const $=(q,r=document)=>r.querySelector(q);
+const app=$("#app");
+const doneCount=e=>(S[e.id]||[]).filter(Boolean).length;
+EX.forEach(e=>e.id="e"+e.n);
+
+function render(keepFocus){
+  let h="";
+  EX.forEach(e=>{
+    const on=S[e.id]||[],w=S[e.id+"_w"]||[];
+    const done=on.filter(Boolean).length===3;
+    h+=`<div class="sec">${e.grp}</div><div class="card ${done?"done":""}">`;
+    if(e.img)h+=`<img class="pic" src="${e.img}" alt="${e.en}">`;
+    if(e.gif)h+=`<div class="gl" style="padding:8px 14px 0">الحركة — الأخضر = العضلة العاملة</div><img class="gif" src="${e.gif}" alt="${e.en}" style="margin:6px auto">`;
+    h+=`<div class="body"><p class="en"><span class="num">${e.n}</span>${e.en}</p><p class="ar">${e.ar}</p>`;
+    h+=`<div class="tags"><div class="tag">3<small>المجموعات</small></div><div class="tag"><span dir="ltr">${e.reps[0]}${e.reps[0]===e.reps[2]?"":" → "+e.reps[2]}</span><small>العدّات</small></div></div>`;
+    h+=`<div class="mus">العضلات: ${e.mus}</div>`;
+    h+=`<ol class="steps">${e.steps.map(s=>`<li>${s}</li>`).join("")}</ol>`;
+    if(e.link)h+=`<div class="note" style="background:#13304a;color:#9fd0ff"><a href="${e.link}" target="_blank" rel="noopener" style="color:#9fd0ff">فيديو مرجعي للتمرين ↗</a></div>`;
+    if(e.note)h+=`<div class="note">${e.note}</div>`;
+    h+=`<div class="sets">`;
+    for(let i=0;i<3;i++){
+      h+=`<div class="set"><button class="chip ${on[i]?"on":""}" data-id="${e.id}" data-i="${i}">${on[i]?"✓":i+1}</button><span class="tr"><span dir="ltr">${e.reps[i]}</span> عدة</span>`;
+      if(!e.bw)h+=`<input type="number" inputmode="decimal" placeholder="كجم" value="${w[i]??""}" data-w="${e.id}" data-i="${i}">`;
+      h+=`</div>`;
+    }
+    h+=`</div><textarea class="nt" data-n="${e.id}" placeholder="ملاحظاتك على هذا التمرين...">${S[e.id+"_n"]||""}</textarea></div></div>`;
+  });
+  h+=`<div class="sec">الملخص</div><div class="sum">${SUM.map(r=>`<div><span>${r[0]}</span><em>${r[1]}</em></div>`).join("")}</div>`;
+  h+=`<div class="sec">ملاحظات الحصة</div><textarea class="nt" data-n="gen" placeholder="كيف كانت الحصة؟ التعب، الألم، أي شيء تريد تذكره...">${S.gen_n||""}</textarea>`;
+  h+=`<div class="reset"><button class="btn" id="copy">نسخ ملخص الحصة</button></div><textarea class="nt" id="out" readonly style="display:none;min-height:180px"></textarea>`;
+  h+=`<div class="reset"><button class="btn ghost" id="reset">ابدأ من جديد (مسح العلامات)</button></div>`;
+  app.innerHTML=h;progress();
+}
+function progress(){
+  const tot=EX.length*3;let d=0;EX.forEach(e=>d+=doneCount(e));
+  const p=Math.round(d/tot*100);$("#fill").style.width=p+"%";$("#pct").textContent=p+"% — "+d+" من "+tot+" مجموعة";
+}
+app.addEventListener("click",ev=>{
+  const c=ev.target.closest(".chip");
+  if(c){const id=c.dataset.id,i=+c.dataset.i;const a=S[id]||[];a[i]=!a[i];S[id]=a;save();
+    const was=window.scrollY;render();window.scrollTo(0,was);
+    if(a[i])startT(60);return}
+  if(ev.target.id==="copy"){
+    let t="حصة رجل — 23/11/2026\n";
+    EX.forEach(e=>{const on=S[e.id]||[],w=S[e.id+"_w"]||[];
+      t+="\n"+e.n+". "+e.en+": "+[0,1,2].map(i=>(on[i]?"✓":"✗")+(e.bw?"":" "+(w[i]?w[i]+" كجم":"-"))).join(" | ");
+      if(S[e.id+"_n"])t+="\n   ملاحظة: "+S[e.id+"_n"]});
+    if(S.gen_n)t+="\n\nملاحظات الحصة: "+S.gen_n;
+    const out=$("#out");out.value=t;out.style.display="block";out.focus();out.select();
+    try{navigator.clipboard.writeText(t).then(()=>{ev.target.textContent="تم النسخ ✓"},()=>{ev.target.textContent="انسخ النص من الأسفل"})}catch(e){ev.target.textContent="انسخ النص من الأسفل"}
+    return}
+  if(ev.target.id==="reset"){const r=ev.target;
+    if(r.dataset.sure){S={};save();render()}
+    else{r.dataset.sure=1;r.textContent="اضغط مرة ثانية للتأكيد";setTimeout(()=>{r.dataset.sure="";r.textContent="ابدأ من جديد (مسح العلامات)"},3000)}return}
+  if(ev.target.classList.contains("pic")||ev.target.classList.contains("gif")){const z=$("#zoom");$("img",z).src=ev.target.src;z.style.display="flex"}
+});
+app.addEventListener("input",ev=>{
+  const t=ev.target;if(t.dataset.n){S[t.dataset.n==="gen"?"gen_n":t.dataset.n+"_n"]=t.value;save();return}
+  if(t.dataset.w){const a=S[t.dataset.w+"_w"]||[];a[+t.dataset.i]=t.value;S[t.dataset.w+"_w"]=a;save()}
+});
+$("#zoom").onclick=()=>{$("#zoom").style.display="none"};
+document.querySelectorAll("#timer [data-s]").forEach(b=>b.onclick=()=>startT(+b.dataset.s));
+
+let T=null,left=0;const box=$("#timer"),tt=$("#tt");
+const fmt=s=>String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0");
+function beep(){try{const a=new (window.AudioContext||window.webkitAudioContext)(),o=a.createOscillator();o.connect(a.destination);o.frequency.value=880;o.start();setTimeout(()=>o.stop(),350)}catch(e){}try{navigator.vibrate&&navigator.vibrate(300)}catch(e){}}
+function startT(s){clearInterval(T);left=s;tt.textContent=fmt(left);box.className="go";
+  T=setInterval(()=>{left--;tt.textContent=fmt(Math.max(left,0));if(left<=0){clearInterval(T);box.className="end";beep();setTimeout(()=>box.className="",2500)}},1000)}
+$("#tstop").onclick=()=>{clearInterval(T);tt.textContent="00:00";box.className=""};
+render();
+</script>
+</body>
+</html>
