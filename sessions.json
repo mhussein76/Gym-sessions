@@ -29,6 +29,20 @@
    ]
   },
   {
+   "id": "chest-shoulder",
+   "name": "Class Chest & Shoulder",
+   "ar": "صدر وكتف",
+   "icon": "🏋️",
+   "sessions": [
+    {
+     "title": "حصة صدر وكتف",
+     "date": "25/11/2026",
+     "summary": "صدر خفيف + كتف جانبي وخلفي + Upright Row، 5 تمارين",
+     "path": "sessions/shoulder-2026-11-25/"
+    }
+   ]
+  },
+  {
    "id": "chest",
    "name": "Class Chest",
    "ar": "صدر",
@@ -47,14 +61,7 @@
    "name": "Class Shoulder",
    "ar": "أكتاف",
    "icon": "🤸",
-   "sessions": [
-    {
-     "title": "حصة صدر وكتف",
-     "date": "25/11/2026",
-     "summary": "صدر خفيف + كتف جانبي وخلفي + Upright Row، 5 تمارين",
-     "path": "sessions/shoulder-2026-11-25/"
-    }
-   ]
+   "sessions": []
   },
   {
    "id": "legs",
