@@ -41,7 +41,7 @@ footer{text-align:center;color:var(--mute);font-size:13px;padding:24px 16px 40px
 </main>
 <script>
 const id=new URLSearchParams(location.search).get("c");
-fetch("sessions.json").then(r=>r.json()).then(data=>{
+fetch("sessions.json?t="+Date.now(),{cache:"no-store"}).then(r=>r.json()).then(data=>{
   const c=data.classes.find(x=>x.id===id);
   if(!c){document.getElementById("list").innerHTML='<div class="empty">الكلاس غير موجود.</div>';return}
   document.title=c.name;document.getElementById("t").textContent=c.name;

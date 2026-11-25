@@ -51,7 +51,7 @@ footer{text-align:center;color:var(--mute);font-size:13px;padding:24px 16px 40px
 </main>
 <footer>Gym Sessions</footer>
 <script>
-fetch("sessions.json").then(r=>r.json()).then(data=>{
+fetch("sessions.json?t="+Date.now(),{cache:"no-store"}).then(r=>r.json()).then(data=>{
   const el=document.getElementById("list");
   el.innerHTML=data.classes.map(c=>{
     const n=c.sessions.length;
