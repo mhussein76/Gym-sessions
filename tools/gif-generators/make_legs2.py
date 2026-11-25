@@ -1,0 +1,50 @@
+t=open('make_legs.py',encoding='utf8').read()
+exec('\n'.join(l for l in t.split('\n') if not l.startswith('run(')))
+
+def seated_calf(p,label):
+    im,d=mkimg()
+    hip=(cx-30,336)
+    th=L(-20,34,p);B=(cx+62,392)
+    heel=(B[0]-24*math.cos(rad(th)),B[1]-24*math.sin(rad(th)))
+    ank=(heel[0]+8,heel[1]-10)
+    knee=ik2(hip,ank,66,62,key=lambda c:c[1])
+    # machine
+    rect(d,cx-84,hip[1]+16,cx+12,hip[1]+30,MC,5);rect(d,cx-48,hip[1]+30,cx-36,408,MC,3)
+    rect(d,cx-70,406,cx+120,414,MC,3);rect(d,cx+40,392,cx+112,412,STEEL,4)
+    torso(d,hip,-4)
+    capsule(d,hip,knee,28,19,SK);capsule(d,knee,ank,19,13,SK)
+    capsule(d,ank,heel,11,9,SK);capsule(d,heel,B,11,9,SK);capsule(d,B,(B[0]+14,B[1]+1),10,8,SK)
+    padc=(knee[0]-4,knee[1]-24)
+    rect(d,padc[0]-24,padc[1]-8,padc[0]+22,padc[1]+8,(60,70,90,255),6)
+    capsule(d,(padc[0]-24,padc[1]),(hip[0]-48,hip[1]-70),8,8,STEEL);disc(d,(hip[0]-48,hip[1]-70),6,(60,70,90,255))
+    ov,o=newov(im);ci=L(.3,1,p)
+    mid=((knee[0]+ank[0])/2-6,(knee[1]+ank[1])/2);el(o,mid[0],mid[1],25,7,ci,rot=deg(knee,ank))
+    return finish(im,ov,"Seated Calf Raise Machine (side view)",label,[("Calves",ci)])
+run("seated-calf",seated_calf,0,1,"Pad on the knees, heels dropped for a stretch","Up on the toes. Squeeze the calves","1. Rise up on your toes, knees stay still","2. Lower the heels slowly, full stretch")
+
+def hip_abd(p,label):
+    im,d=mkimg()
+    # seat + back pad (front view)
+    d.rounded_rectangle([((cx-52)*SS),(205*SS),((cx+52)*SS),(345*SS)],radius=10*SS,fill=MC)
+    d.rounded_rectangle([((cx-70)*SS),(338*SS),((cx+70)*SS),(356*SS)],radius=8*SS,fill=MC)
+    d.rectangle([((cx-8)*SS),(356*SS),((cx+8)*SS),(FL*SS)],fill=MC)
+    rect(d,cx-90,406,cx+90,414,MC,3)
+    ox=L(34,66,p)
+    for s in (-1,1):
+        hip=(cx+s*20,338);knee=(cx+s*(ox+8),360);ank=(cx+s*(ox+6),FL-8)
+        capsule(d,hip,knee,28,22,SK);capsule(d,knee,ank,20,13,SK)
+        d.ellipse([(ank[0]-14)*SS,(ank[1]-4)*SS,(ank[0]+14)*SS,(ank[1]+10)*SS],fill=SK)
+    # torso
+    d.polygon([S(z) for z in [(cx-50,215),(cx+50,215),(cx+30,340),(cx-30,340)]],fill=SK)
+    capsule(d,(cx,200),(cx,184),16,14,SK);d.ellipse([(cx-17)*SS,(160-17)*SS,(cx+17)*SS,(160+17)*SS],fill=SK)
+    for s in (-1,1):
+        sh=(cx+s*50,222);hand=(cx+s*66,332);el_=(cx+s*72,276)
+        capsule(d,sh,el_,18,13,SK2);capsule(d,el_,hand,13,11,SK2)
+        # pads outside the knees
+        px=cx+s*(ox+8+16)
+        rect(d,px-9,330,px+9,392,(60,70,90,255),6)
+        capsule(d,(px,392),(cx+s*40,400),7,7,STEEL)
+    ov,o=newov(im);gi=L(.3,1,p)
+    for s in (-1,1):el(o,cx+s*40,346,17,13,gi)
+    return finish(im,ov,"Hip Abduction Machine (front view)",label,[("Glutes",gi)])
+run("hip-abduction",hip_abd,0,1,"Knees together, pads on the outside of the knees","Knees open wide. Squeeze the side glutes","1. Open the legs out slowly, back stays on the pad","2. Close slowly, do not let the weight crash")
