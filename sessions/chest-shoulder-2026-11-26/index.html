@@ -100,8 +100,8 @@ function render(keepFocus){
     const done=on.filter(Boolean).length===3;
     h+=`<div class="sec">${e.grp}</div><div class="card ${done?"done":""}">`;
     h+=`<div class="body" style="padding-bottom:4px"><p class="en"><span class="num">${e.n}</span>${e.en}</p><p class="ar">${e.ar}</p></div>`;
-    if(e.gif)h+=`<img class="gif" src="${e.gif}" alt="${e.en}" style="margin:2px auto 6px">`;
-    if(e.img)h+=`<img class="pic tall" src="${e.img}" alt="${e.en}">`;
+    if(e.gif)h+=`<img class="gif" src="${e.gif}?v=2" alt="${e.en}" style="margin:2px auto 6px">`;
+    if(e.img)h+=`<img class="pic tall" src="${e.img}?v=2" alt="${e.en}">`;
     h+=`<div class="body"><div class="mus">العضلات: ${e.mus}</div>`;
     h+=`<ol class="steps">${e.steps.map(s=>`<li>${s}</li>`).join("")}</ol>`;
     if(e.link)h+=`<div class="note" style="background:#13304a;color:#9fd0ff"><a href="${e.link}" target="_blank" rel="noopener" style="color:#9fd0ff">فيديو / شرح مرجعي للتمرين ↗</a></div>`;
